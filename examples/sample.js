@@ -25,6 +25,7 @@ const arr = [
     warrantyEnd: '2015',
   },
 ];
+
 // Filter using same data types
 const sameDataType = async () => {
   const filtersMatchType = {
@@ -33,7 +34,6 @@ const sameDataType = async () => {
   };
   console.log(await filterObjectArray(arr, filtersMatchType));
 };
-
 
 // Filter array using different data types
 const diffDataType = async () => {
@@ -51,8 +51,8 @@ sameDataType();
     warrantyEnd: '2013' } ] */
 
 diffDataType();
-/* [ { car: 'toyota',
-    color: 'blue',
-    year: 2010,
+/* [ { car: 'ford',
+    color: 'yellow',
+    year: '2012',
     trans: 'auto',
-    warrantyEnd: '2013' } ] */
+    warrantyEnd: '2015' } ] */

@@ -1,6 +1,6 @@
 {
   "name": "filter-object-array",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Filter an array of objects with an object",
   "author": "Caleb Lemoine",
   "license": "MIT",
