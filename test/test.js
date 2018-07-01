@@ -1,6 +1,6 @@
-const filterObjectArray = require('../index');
-const { expect } = require('chai');
 const _ = require('underscore');
+const { expect } = require('chai');
+const filterObjectArray = require('../index');
 
 const arr = [
   {

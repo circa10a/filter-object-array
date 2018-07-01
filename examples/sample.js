@@ -1,3 +1,4 @@
+/* eslint-disable */
 const filterObjectArray = require('filter-object-array');
 
 const arr = [
