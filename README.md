@@ -57,7 +57,7 @@ const sameDataType = async () => {
     color: 'blue',
     year: 2010,
   };
-  console.log(await filterObjectArray(arr, filtersMatchType));
+  console.log(await filterObjectArray({ array: arr, objFilter: filtersMatchType }));
 };
 
 // Filter array using different data types
@@ -65,7 +65,7 @@ const diffDataType = async () => {
   const filtersDiffType = {
     warrantyEnd: 2015,
   };
-  console.log(await filterObjectArray(arr, filtersDiffType, { ignoreDataType: true }));
+  console.log(await filterObjectArray({array: arr, objFilter: filtersDiffType, ignoreDataType: true }));
 };
 
 sameDataType();

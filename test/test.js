@@ -34,7 +34,7 @@ describe('Test Filter with Matching Data types', () => {
       color: 'blue',
       year: 2010,
     };
-    const filteredResults = await filterObjectArray(arr, filtersMatchType);
+    const filteredResults = await filterObjectArray({ array: arr, objFilter: filtersMatchType });
     expect(filteredResults[0]).to.deep.equal(arr[0]);
   });
   it('Ensure data was not matched', async () => {
@@ -43,7 +43,7 @@ describe('Test Filter with Matching Data types', () => {
       year: 2020,
     };
     try {
-      const filteredResults = await filterObjectArray(arr, filtersMatchType);
+      const filteredResults = await filterObjectArray({ array: arr, objFilter: filtersMatchType });
       expect(filteredResults[0]).to.not.deep.equal(arr[0]);
     } catch (e) {
       // Ensure data wasn't matched/promise rejection
@@ -57,7 +57,7 @@ describe('Test Filter with Different Data types', () => {
     const filtersDiffType = {
       year: '2012',
     };
-    const filteredResults = await filterObjectArray(arr, filtersDiffType, { ignoreDataType: true });
+    const filteredResults = await filterObjectArray({ array: arr, objFilter: filtersDiffType, ignoreDataType: true }); // eslint-disable-line
     const stringifiedArrObject = _.mapObject(arr[2], val => val.toString());
     expect(filteredResults[0]).to.deep.equal(stringifiedArrObject);
   });
@@ -67,7 +67,7 @@ describe('Test Filter with Different Data types', () => {
       year: '2020',
     };
     try {
-      const filteredResults = await filterObjectArray(arr, filtersDiffType, { ignoreDataType: true }); // eslint-disable-line
+      const filteredResults = await filterObjectArray({ array: arr, objFilter: filtersDiffType, ignoreDataType: true }); // eslint-disable-line
       const stringifiedArrObject = _.mapObject(arr[2], val => val.toString());
       expect(filteredResults[0]).to.not.deep.equal(stringifiedArrObject);
     } catch (e) {

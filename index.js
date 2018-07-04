@@ -2,22 +2,20 @@ const _ = require('underscore');
 
 /**
  * @author Caleb Lemoine
- * @param {Array} arr Array of obects to filter
- * @param {Object} objFilter  Object containing filter criteria
- * @param {Object} params [Optional] Specify if data type should match
+ * @param {Object} params [Required] (array: <array>) Array of objects to filter, [Required] (objFilter: <object>) Object to filter with, [Optional] (ignoreDataType: <boolean>) Specify if data type should match
  * @promise [results]
  * @reject {error}
  * @fulfill [results]
  * @returns {Promise.<array, Error>} Promise that returns array of filtered objects if resolved or error if rejected // eslint-disable-line
  */
 
-module.exports = function filterObjectArray(arr, objFilter, params = {}) {
+module.exports = function filterObjectArray(params = {}) {
   return new Promise((resolve, reject) => {
     // Convert all values data types as string
     if (params.ignoreDataType) {
-      const newArr = arr.map(item => _.mapObject(item, val => val.toString()));
+      const newArr = params.array.map(item => _.mapObject(item, val => val.toString()));
       // Ensure data/json brought in to only have strings for values
-      const modifiedFilters = _.mapObject(objFilter, val => val.toString());
+      const modifiedFilters = _.mapObject(params.objFilter, val => val.toString());
       // Filter
       const results = _.filter(newArr, modifiedFilters);
       // Ensure results were found
@@ -28,7 +26,7 @@ module.exports = function filterObjectArray(arr, objFilter, params = {}) {
       }
     // Match data types
     } else {
-      const results = _.filter(arr, objFilter);
+      const results = _.filter(params.array, params.objFilter);
       // Ensure results were found
       if (results.length === 0) {
         reject(new Error('No matching objects found.'));
@@ -38,4 +36,3 @@ module.exports = function filterObjectArray(arr, objFilter, params = {}) {
     }
   });
 };
-
