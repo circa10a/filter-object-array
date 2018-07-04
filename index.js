@@ -13,7 +13,7 @@ const _ = require('underscore');
 
 module.exports = function filterObjectArray(arr, objFilter, params = {}) {
   return new Promise((resolve, reject) => {
-      // Convert all values data types as string
+    // Convert all values data types as string
     if (params.ignoreDataType) {
       const newArr = arr.map(item => _.mapObject(item, val => val.toString()));
       // Ensure data/json brought in to only have strings for values
