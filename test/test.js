@@ -75,3 +75,14 @@ describe('Test Filter with Different Data types', () => {
     }
   });
 });
+
+describe('Test Filter with no matching data', () => {
+  it('Ensure empty array was returned', async () => {
+    // Using different data type
+    const filtersDiffType = {
+      year: '2001',
+    };
+    const filteredResults = await filterObjectArray({ array: arr, objFilter: filtersDiffType, ignoreDataType: true }); // eslint-disable-line
+    expect(filteredResults).to.have.length(0);
+  });
+});

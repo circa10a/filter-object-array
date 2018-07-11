@@ -10,7 +10,7 @@ const _ = require('underscore');
  */
 
 module.exports = function filterObjectArray(params = {}) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     // Convert all values data types as string
     if (params.ignoreDataType) {
       const newArr = params.array.map(item => _.mapObject(item, val => val.toString()));
@@ -18,21 +18,11 @@ module.exports = function filterObjectArray(params = {}) {
       const modifiedFilters = _.mapObject(params.objFilter, val => val.toString());
       // Filter
       const results = _.filter(newArr, modifiedFilters);
-      // Ensure results were found
-      if (results.length === 0) {
-        reject(new Error('No matching objects found.'));
-      } else {
-        resolve(results);
-      }
+      resolve(results);
     // Match data types
     } else {
       const results = _.filter(params.array, params.objFilter);
-      // Ensure results were found
-      if (results.length === 0) {
-        reject(new Error('No matching objects found.'));
-      } else {
-        resolve(results);
-      }
+      resolve(results);
     }
   });
 };
