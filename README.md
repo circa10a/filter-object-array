@@ -65,7 +65,7 @@ const diffDataType = async () => {
   const filtersDiffType = {
     warrantyEnd: 2015,
   };
-  console.log(await filterObjectArray({array: arr, objFilter: filtersDiffType, ignoreDataType: true }));
+  console.log(await filterObjectArray({ array: arr, objFilter: filtersDiffType, ignoreDataType: true }));
 };
 
 sameDataType();
