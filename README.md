@@ -1,6 +1,5 @@
 # filter-object-array
 
-[![Travis](https://img.shields.io/travis/circa10a/filter-object-array.svg?style=flat-square)](https://travis-ci.org/circa10a/filter-object-array)
 [![npm version](https://img.shields.io/npm/v/filter-object-array.svg?style=flat-square)](https://www.npmjs.com/package/filter-object-array)
 [![npm downloads](https://img.shields.io/npm/dm/filter-object-array.svg?style=flat-square)](https://npm-stat.com/charts.html?package=filter-object-array&from=2018-03-29)
 [![Dependencies status](https://img.shields.io/david/circa10a/filter-object-array.svg?style=flat-square)](https://david-dm.org/circa10a/filter-object-array#info=dependencies)
