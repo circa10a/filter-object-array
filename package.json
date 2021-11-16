@@ -1,15 +1,12 @@
 {
   "name": "filter-object-array",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Filter an array of objects with an object",
   "author": "Caleb Lemoine",
   "license": "MIT",
   "main": "index.js",
   "directories": {
     "test": "test"
-  },
-  "engines": {
-    "node": ">=7.6.0"
   },
   "homepage": "https://github.com/circa10a/filter-object-array#readme",
   "repository": {
@@ -27,23 +24,23 @@
     "match"
   ],
   "scripts": {
-    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "lint": "./node_modules/.bin/eslint **/*.js test/*.js",
-    "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
-    "test": "./node_modules/.bin/nyc node_modules/.bin/_mocha"
+    "coverage": "nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
+    "lint": "eslint **/*.js test/*.js",
+    "lint-fix": "eslint **/*.js --fix",
+    "test": "nyc node_modules/.bin/_mocha"
   },
   "dependencies": {
-    "underscore": "^1.12.0"
+    "underscore": "^1.13.1"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "coveralls": "^3.0.2",
-    "eslint": "^7.15.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-chai-friendly": "^0.6.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-mocha": "^8.0.0",
-    "mocha": "^8.2.1",
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-mocha": "^9.0.0",
+    "mocha": "^9.1.3",
     "nyc": "^15.1.0"
   }
 }
